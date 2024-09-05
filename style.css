@@ -1,0 +1,158 @@
+body {
+    font-family: arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: rgba(70, 131, 180, 0.753);
+    background-image: url("https://i.postimg.cc/Hnbqj5RN/image.png");
+    color: rgb(255, 238, 0);
+    text-align: center;
+    text-shadow: 7px 9px 9px rgb(0, 0, 0);
+    padding: 20px;
+}
+
+h1 {
+    font-size: 38px;
+    margin: 0;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 30%;
+    border: none;
+    border-radius: 25px;
+    margin: 20px 0;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgb(255, 238, 0);
+    border-radius: 25px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    transition: transform 0.3s;
+}
+
+#searchButton:hover {
+    transform: scale(1.09);
+}
+
+.pokemonCard {
+    position: relative;
+    width: 200px;
+    min-height: 300px;
+    margin: 10px;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    perspective: 1000px;
+}
+
+.pokemonCardInner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+}
+
+.pokemonCard:hover .pokemonCardInner {
+    transform: rotateY(180deg);
+}
+
+.pokemonCardFront, .pokemonCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.pokemonCardFront {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pokemonCardBack {
+    background: #f0f0f0;
+    border-radius: 8px;
+    color: #333;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.pokemonCardBack h3 {
+    font-size: larger;
+}
+
+.pokemonCardBack p {
+    font-size: 13px;
+}
+
+#pokemonList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+:root {
+    --background-color-light: #ffffff;
+    --text-color-light: #000000;
+    --background-color-dark: #121212;
+    --text-color-dark: #000000;
+}
+
+.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+}
+
+.boton1 {
+    border-radius: 50px;
+    background-color: rgba(255, 0, 0, 0);
+    border: 0;
+}
+
+footer {
+    background-color: rgba(0, 20, 123, 0.558);
+    color: rgb(255, 255, 255);
+    width: 10rem;
+    border-radius: 15px;
+    margin-left: 0.5rem;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    height: 1.5rem;
+    justify-content: center;
+}
+
+footer:hover {
+    animation: 1s tilt-shaking infinite;
+    border-radius: 15px;
+}
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0eg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
